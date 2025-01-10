@@ -1,0 +1,9 @@
+@use '../base/font.scss';
+@use '../base/reset.scss';
+@use '../base/variables.scss';
+@use '../helpers/utilities.scss';
+
+.wrap {
+   max-width: 1024px;
+   margin: 0 auto;
+}

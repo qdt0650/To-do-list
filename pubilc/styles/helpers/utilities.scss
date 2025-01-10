@@ -1,0 +1,66 @@
+// 반복적으로 재사용할 스타일
+
+@mixin setMargin($top, $right, $bottom, $left) {
+   margin-top: $top;
+   margin-right: $right;
+   margin-bottom: $bottom;
+   margin-left: $left;
+}
+
+@mixin setPadding($top, $right, $bottom, $left) {
+   padding-top: $top;
+   padding-right: $right;
+   padding-bottom: $bottom;
+   padding-left: $left;
+}
+
+@mixin setFlex($display, $align, $justify, $direction) {
+   display: $display;
+   align-items: $align;
+   justify-content: $justify;
+   flex-direction: $direction;
+}
+
+@mixin setWH($width, $height) {
+   width: $width;
+   height: $height;
+}
+
+@mixin setAbsolute($left, $top, $x, $y) {
+   position: absolute;
+   left: $left;
+   top: $top;
+   transform: translate($x, $y);
+}
+
+@mixin setRelative($left, $top, $x, $y) {
+   position: relative;
+   left: $left;
+   top: $top;
+   transform: translate($x, $y);
+}
+
+@mixin setBasicAttr($width, $height, $padding, $bg) {
+   @include setWH($width, $height);
+   padding: $padding;
+   background-color: $bg;
+}
+
+@mixin setBtn($width, $height, $padding, $bg, $color) {
+   @include setBasicAttr($width, $height, $padding, $bg);
+   color: $color;
+}
+
+@mixin setInput($width, $height, $padding, $bg, $border, $borderRadius) {
+   @include setBasicAttr($width, $height, $padding, $bg);
+   border: 1px solid $border;
+   border-radius: $borderRadius;
+}
+
+@mixin minWidth($width) {
+   min-width: $width;
+}
+
+@mixin maxWudth($width) {
+   max-width: $width;
+}
