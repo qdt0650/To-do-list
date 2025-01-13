@@ -48,6 +48,9 @@ const handleInputValue = (event) => {
       todoCheck: false,
    }
 
+   // 색상변경 후 기본색상으로 돌려줍니다
+   textColorChange.value = '#000000'
+
    // 생성된 객체를 빈 배열(todo)에 추가합니다.
    todo.push(singleTodo)
 
@@ -63,30 +66,47 @@ todoAddButton.addEventListener('click', handleInputValue)
 
 const updateTodo = () => {
    // 배열 형태의 데이터를 map메서드를 이용해서 문자열로 변환해줍니다.
-   const createTodoHtml = todo
-      .map((singleTodo) => {
-         return `
-         <li>
-            <div>
-               <label for="todoCheck">
-                  <input type="checkbox" id="todoCheck" />
-               </label>
-               <span class="color_change" style="color: ${singleTodo.textColor}">${singleTodo.todo}</span>
-               <i>${singleTodo.todoDate}</i>
-               <button type="button">
-                  <span>수정</span>
-               </button>
-               <button type="button">
-                  <span>삭제</span>
-               </button>
-            </div>
-         </li>
-      `
-      })
-      .join('')
+   const createTodoHtml = todo.map((singleTodo) => {
+      return `
+      <li>
+         <div>
+            <label for="todoCheck">
+               <input type="checkbox" id="todoCheck" ${singleTodo.todoCheck ? 'checked' : ''}/>
+            </label>
+            <span class="color_change" style="color: ${singleTodo.textColor}">${singleTodo.todo}</span>
+            <i>${singleTodo.todoDate}</i>
+            <button type="button">
+               <span>수정</span>
+            </button>
+            <button type="button">
+               <span>삭제</span>
+            </button>
+         </div>
+      </li>
+   `
+   })
 
    // ul요소 밑에 생성된 html을 넣어줍니다.
-   todoListUl.innerHTML = createTodoHtml
+   todoListUl.innerHTML = createTodoHtml.join('')
+
+   // addEventCheckbox 함수를 호출한다.
+   addEventCheckbox()
+}
+
+const addEventCheckbox = () => {
+   // 모든 checkbox를 가져온다.
+   const checkboxAll = document.querySelectorAll('#todoCheck')
+
+   // 모든 checkbox들에 change이벤트를 준다.
+   checkboxAll.forEach((checkbox, index) => {
+      checkbox.addEventListener('change', (event) => {
+         // todo배열 index번째 todoCheck 속성을 변경된 checked값으로 바꿔준다.
+         todo[index].todoCheck = event.target.checked
+
+         // 로컬스토리지에 변경된 데이터를 저장한다.
+         saveToDos(todo)
+      })
+   })
 }
 
 if (saveToDos !== null) {
