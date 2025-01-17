@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To-do-list</title>
+      <link rel="stylesheet" href="../pubilc/styles/layout/layout.css" />
+      <link rel="stylesheet" href="../pubilc/styles/pages/common.css" />
+   </head>
+   <body>
+      <div class="wrap">
+         <div class="header">
+            <h2>To-do-list</h2>
+         </div>
+         <div class="container">
+            <div class="todo_content">
+               <ul id="todoLists" class="todo_lists">
+                  <!-- 1번째 할 일 및 수정 -->
+                  <li class="single_todo">
+                     <div class="todoContent">
+                        <label for="todoCheckbox">
+                           <input type="checkbox" class="todo_checkbox" />
+                        </label>
+                        <span class="todo_text">할 일111</span>
+                        <i>2025-01-14 15:05:34</i>
+                        <button type="button" class="edit_button">
+                           <span>수정</span>
+                        </button>
+                     </div>
+                     <!-- 수정하기 -->
+                     <div class="edit_content">
+                        <label for="editInput">
+                           <input type="text" id="editInput" class="edit_input" />
+                        </label>
+                        <button type="button" id="completeEditButton" class="complete_edit_button">
+                           <span>수정완료</span>
+                        </button>
+                        <button type="button" id="cancelEditButton" class="cancle_edit_button">
+                           <span>수정취소</span>
+                        </button>
+                     </div>
+                  </li>
+                  <!-- 2번째 할 일 및 수정 -->
+                  <li class="single_todo">
+                     <div class="todoContent">
+                        <label for="todoCheckbox">
+                           <input type="checkbox" class="todo_checkbox" />
+                        </label>
+                        <span class="todo_text">할 일222</span>
+                        <i>2025-01-14 15:05:34</i>
+                        <button type="button" class="edit_button">
+                           <span>수정</span>
+                        </button>
+                     </div>
+                     <!-- 수정하기 -->
+                     <div class="edit_content">
+                        <label for="editInput">
+                           <input type="text" id="editInput2" class="edit_input" />
+                        </label>
+                        <button type="button" id="completeEditButton2" class="complete_edit_button">
+                           <span>수정완료</span>
+                        </button>
+                        <button type="button" id="cancelEditButton2" class="cancle_edit_button">
+                           <span>수정취소</span>
+                        </button>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
+      <script type="module" src="./features/editTest.js"></script>
+   </body>
+</html>

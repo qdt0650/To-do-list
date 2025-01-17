@@ -2,3 +2,26 @@
 @use '../base/reset.scss';
 @use '../base/variables.scss';
 @use '../helpers/utilities.scss';
+
+// .todoContentChecked span.todo_text,
+// .todoContentCheckeds i {
+//    text-decoration: line-through;
+//    color: #aaa !important;
+// }
+
+.edit_content {
+   display: none;
+}
+.edit_content.active {
+   display: block;
+}
+
+.edit_mark {
+   font-size: 12px;
+   color: #333;
+   font-weight: 300;
+}
+.complete {
+   text-decoration: line-through;
+   color: #777 !important;
+}

@@ -14,7 +14,7 @@
          </div>
          <div class="container">
             <div class="input_content">
-               <form action="todoForm" id="todo_form">
+               <form id="todo_form">
                   <label for="todoInput">
                      <input type="text" id="todoInput" placeholder="할 일을 입력해주세요." />
                   </label>
@@ -27,15 +27,22 @@
                      <img src="../pubilc/images/icons/addIcon.png" alt="등록" />
                   </span>
                </button>
+               <button type="button" id="pickDeleteButton">
+                  <span>선택삭제</span>
+               </button>
+               <button type="button" id="completeTodoDeleteButton">
+                  <span>완료삭제</span>
+               </button>
             </div>
-            <div class="todo_content">
-               <ul id="todo_list">
-                  <!-- li -->
+            <div>
+               <ul class="todo_list">
+                  <!-- 할 일 등록 list 및 수정-->
                </ul>
             </div>
          </div>
       </div>
 
       <script type="module" src="./features/add.js"></script>
+      <script type="module" src="./features/edit.js"></script>
    </body>
 </html>
