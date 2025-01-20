@@ -9,6 +9,7 @@ export const completeTodoButton = (saveToDos) => {
       const todoContentId = parentTodoContent.getAttribute('data-id')
       const childrenTodoText = parentTodoContent.querySelector('.todo_text')
       const childrenTodoDate = parentTodoContent.querySelector('.todo_date')
+      const editButton = parentTodoContent.querySelector('.edit_buttons')
 
       // 로컬스토리지 데이터를 불러옵니다.
       const getTodo = readToDos()
@@ -17,11 +18,16 @@ export const completeTodoButton = (saveToDos) => {
          if (data.id === Number(todoContentId)) {
             // id값이 일치하면 confirm으로 완료 여부를 확인해줍니다.
             const confirmCheck = () => {
-               if (confirm('완료 처리 하시겠습니까?')) {
-                  // 완료 처리 성공시 클래스 추가와 true값을 리턴해줍니다.
-                  childrenTodoText.className += 'complete'
-                  childrenTodoDate.className += 'complete'
+               if (data.completeButton) {
+                  alert('이미 완료된 할 일 입니다.')
                   return true
+               } else {
+                  if (confirm('완료 처리 하시겠습니까?')) {
+                     // 완료 처리 성공시 클래스 추가와 true값을 리턴해줍니다.
+                     childrenTodoText.className += 'complete'
+                     childrenTodoDate.className += 'complete'
+                     return true
+                  }
                }
             }
 

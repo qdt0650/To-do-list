@@ -1,0 +1,15 @@
+@import '../base/font.scss';
+@import '../base/reset.scss';
+@import '../base/variables.scss';
+@import '../helpers/utilities.scss';
+
+input[type='text'] {
+   @include setInput(170px, 30px, 7px, #fff, #999, 5px);
+}
+
+.input_color {
+   @include setWH(30px, 34px);
+   border-radius: $DEF_BORDER_RADIUS - 1;
+   border: 0;
+   background-color: transparent;
+}

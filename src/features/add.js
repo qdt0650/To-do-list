@@ -4,8 +4,8 @@ import { newDate } from '../utilities/newDate.js'
 import { checkboxEvent } from '../utilities/checkboxEvent.js'
 import { todoEditButton } from '../utilities/todoEditButton.js'
 import { completeTodoButton } from '../utilities/completeTodoButton.js'
-import { incompleteDelete } from './delete/incompleteDelete.js'
-import { completedDelete } from './delete/completedDelete.js'
+import { incompleteDelete } from './incompleteDelete.js'
+import { completedDelete } from './completedDelete.js'
 
 const todoForm = document.querySelector('#todo_form')
 const todoInput = document.querySelector('#todoInput')
@@ -45,6 +45,9 @@ const handleInputValue = (event) => {
       editMark: false,
       completeButton: false,
    }
+
+   // 색상변경 후 기본색상으로 돌려줍니다
+   textColorChange.value = '#111111'
 
    // 생성된 객체를 추가합니다.
    currentToDos.push(todoData)

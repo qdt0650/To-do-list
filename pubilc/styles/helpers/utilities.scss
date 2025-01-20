@@ -14,11 +14,11 @@
    padding-left: $left;
 }
 
-@mixin setFlex($display, $align, $justify, $direction) {
+@mixin setFlex($display, $direction, $align, $justify) {
    display: $display;
+   flex-direction: $direction;
    align-items: $align;
    justify-content: $justify;
-   flex-direction: $direction;
 }
 
 @mixin setWH($width, $height) {
@@ -26,29 +26,25 @@
    height: $height;
 }
 
-@mixin setAbsolute($left, $top, $x, $y) {
+@mixin setAbsolute($right, $top, $x, $y) {
    position: absolute;
-   left: $left;
+   right: $right;
    top: $top;
    transform: translate($x, $y);
 }
 
-@mixin setRelative($left, $top, $x, $y) {
-   position: relative;
-   left: $left;
-   top: $top;
-   transform: translate($x, $y);
+@mixin setBtn($top, $right, $bottom, $left, $bg, $border, $borderRadius, $color) {
+   @include setPadding($top, $right, $bottom, $left);
+   background-color: $bg;
+   border: 1px solid $border;
+   border-radius: $borderRadius;
+   color: $color;
 }
 
 @mixin setBasicAttr($width, $height, $padding, $bg) {
    @include setWH($width, $height);
    padding: $padding;
    background-color: $bg;
-}
-
-@mixin setBtn($width, $height, $padding, $bg, $color) {
-   @include setBasicAttr($width, $height, $padding, $bg);
-   color: $color;
 }
 
 @mixin setInput($width, $height, $padding, $bg, $border, $borderRadius) {
@@ -61,6 +57,6 @@
    min-width: $width;
 }
 
-@mixin maxWudth($width) {
+@mixin maxWidth($width) {
    max-width: $width;
 }

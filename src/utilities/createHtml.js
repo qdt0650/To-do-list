@@ -23,7 +23,7 @@ export const createHtml = (single) => {
                <input type="text" class="edit_input" />
             </label>
             <label for="editTextColorChange">
-               <input type="color" class="edit_text_color" />
+               <input type="color" class="edit_text_color input_color" />
             </label>
             <button class="complete_edit_button">
                <span>수정완료</span>

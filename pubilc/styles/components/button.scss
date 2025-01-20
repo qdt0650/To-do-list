@@ -1,4 +1,10 @@
-@use '../base/font.scss';
-@use '../base/reset.scss';
-@use '../base/variables.scss';
-@use '../helpers/utilities.scss';
+@import '../base/font.scss';
+@import '../base/reset.scss';
+@import '../base/variables.scss';
+@import '../helpers/utilities.scss';
+
+button {
+   @include setBtn(3px, 3px, 3px, 3px, #fff, #999, 5px, #111);
+   font-size: $DEF_FONT_SIZE - 4;
+   @include setMargin(0, 3px, 0, 0);
+}

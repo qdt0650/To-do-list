@@ -1,9 +1,13 @@
-@use '../base/font.scss';
-@use '../base/reset.scss';
-@use '../base/variables.scss';
-@use '../helpers/utilities.scss';
+@import '../base/font.scss';
+@import '../base/reset.scss';
+@import '../base/variables.scss';
+@import '../helpers/utilities.scss';
 
 .wrap {
-   max-width: 1024px;
-   margin: 0 auto;
+   @include setFlex(flex, column, center, center);
+   @include maxWidth(1024px);
+   @include setMargin(30px, auto, 50px, auto);
+}
+.container {
+   @include setMargin(30px, 0, 20px, 0);
 }
