@@ -6,7 +6,7 @@ export const createHtml = (single) => {
                <input type="checkbox" class="todo_checkboxes" ${single.todoCheck ? 'checked' : ''}/>
             </label>
             <span class="todo_text ${single.completeButton ? 'complete' : ''}"  style="color: ${single.textColor}">${single.todo} </span>
-            <i class="edit_mark" style="display: ${single.editMark ? 'inline-block' : 'none'}">(수정됨)</i>
+            <i class="edit_mark ${single.completeButton ? 'complete' : ''}" style="display: ${single.editMark ? 'inline-block' : 'none'}">(수정됨)</i>
             <i class="todo_date ${single.completeButton ? 'complete' : ''}">${single.todoDate}</i>
             <button type="button" class="complete_buttons" >
                 <span>완료</span>
