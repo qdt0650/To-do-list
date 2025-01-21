@@ -38,12 +38,12 @@ const handleInputValue = (event) => {
    // 입력한 데이터를 객체 형태로 변환해줍니다.
    const todoData = {
       id: Date.now(),
-      todo: todoText,
-      textColor: textColorChange.value,
-      todoDate: newDate(),
-      todoCheck: false,
-      editMark: false,
-      completeButton: false,
+      todo: todoText, // 할 일 텍스트
+      textColor: textColorChange.value, // 할 일 텍스트 색상
+      todoDate: newDate(), // 등록 및 수정 날짜
+      todoCheck: false, // 할 일 선택
+      editMark: false, // 수정
+      completeButton: false, // 완료
    }
 
    // 색상변경 후 기본색상으로 돌려줍니다
