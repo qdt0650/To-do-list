@@ -1,7 +1,7 @@
-@import '../base/font.scss';
-@import '../base/reset.scss';
-@import '../base/variables.scss';
-@import '../helpers/utilities.scss';
+@use '../base/font';
+@use '../base/reset';
+@use '../base/variables' as *;
+@use '../helpers/utilities' as *;
 
 button {
    @include setBtn(3px, 3px, 3px, 3px, #fff, #999, 5px, #111);
