@@ -81,6 +81,8 @@ To-do-list/
 │       └── completeTodoButton.js
 └── package.json
 ```
+<br />
+
 ## 트러블슈팅
 <details>
  <summary>
