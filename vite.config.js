@@ -6,4 +6,7 @@ export default defineConfig({
       open: true,
    },
    base: '/To-do-list/',
+   build: {
+      outDir: 'dist', // 빌드 폴더
+   },
 })
