@@ -1,18 +1,18 @@
 # To-do-list
 
 
-## 프로젝트 소개
+## 📌프로젝트 소개
 - 할 일 관리를 도와주는 프로젝트 입니다. 
 - 할 일을 등록하고 수정 및 삭제로 투두리스트를 관리할 수 있습니다.
 
 <br />
 
-## 개발 기간
+## 🕓개발 기간
 - 25.01.07 - 25.01.20
 
 <br />
 
-## 사용한 기술 스택
+## 🎯사용한 기술 스택
 <img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=flat&logo=Visual Studio&logoColor=white"/>
 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
@@ -27,7 +27,7 @@
 
 <br />
 
-## 주요 기능
+## 🔥주요 기능
 #### 1. 할 일 등록
 - 할 일 등록시 각 할 일의 색상을 넣을 수 있습니다.
 - 할 일 등록이 완료되면 등록된 날짜가 나타납니다.
@@ -44,7 +44,7 @@
 
 <br />
 
-## 프로젝트 구조
+## 📂프로젝트 구조
 
 ```
 To-do-list/
@@ -83,7 +83,7 @@ To-do-list/
 ```
 <br />
 
-## 트러블슈팅
+## 🚨트러블슈팅
 <details>
  <summary>
    
