@@ -1,7 +1,7 @@
 export const createHtml = (single) => {
    return `
       <li class="multiple_todo" >
-         <div data-id=${single.id} class = ${single.todoCheck ? 'todo_content_checked' : 'todo_content'}>
+         <div data-id=${single.id} class = ${single.todoCheck ? 'todo_content todo_content_checked' : 'todo_content'}>
             <label for="todoCheckbox">
                <input type="checkbox" class="todo_checkboxes" ${single.todoCheck ? 'checked' : ''}/>
             </label>

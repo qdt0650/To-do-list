@@ -5,6 +5,9 @@ export const completeTodoButton = (saveToDos) => {
 
    const handleComplete = (event) => {
       // 클릭한 버튼의 부모요소를 가져옵니다.
+      const grandParent = event.target.closest('.multiple_todo')
+      const editContent = grandParent.querySelector('.active')
+
       const parentTodoContent = event.target.closest('.todo_content')
       const todoContentId = parentTodoContent.getAttribute('data-id')
       const childrenTodoText = parentTodoContent.querySelector('.todo_text')
@@ -27,6 +30,7 @@ export const completeTodoButton = (saveToDos) => {
                      childrenTodoText.className += 'complete'
                      editMark.className += 'complete'
                      childrenTodoDate.className += 'complete'
+                     editContent.classList.remove('active')
                      return true
                   }
                }
