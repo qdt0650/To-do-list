@@ -26,9 +26,9 @@
    height: $height;
 }
 
-@mixin setAbsolute($right, $top, $x, $y) {
+@mixin setAbsolute($left, $top, $x, $y) {
    position: absolute;
-   right: $right;
+   left: $left;
    top: $top;
    transform: translate($x, $y);
 }
@@ -59,4 +59,30 @@
 
 @mixin maxWidth($width) {
    max-width: $width;
+}
+
+@mixin keyframes($time) {
+   @keyframes fadeIn {
+      from {
+         opacity: 0.5;
+      }
+      to {
+         opacity: 1;
+      }
+   }
+   animation: fadeIn $time ease-in-out;
+}
+
+@mixin keyframesDown($time) {
+   @keyframes fadeInDown {
+      0% {
+         opacity: 0;
+         transform: translate(-100%, -100%);
+      }
+      100% {
+         opacity: 1;
+         transform: translate(-50%, -50%);
+      }
+   }
+   animation: fadeInDown $time ease-in-out;
 }

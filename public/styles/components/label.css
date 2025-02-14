@@ -7,7 +7,9 @@ body,
 textarea,
 input::placeholder,
 input,
-h2 {
+h1,
+h2,
+h3 {
   font-family: "Roboto", sans-serif;
 }
 
@@ -151,7 +153,7 @@ input {
 }
 
 input[type=text] {
-  width: 170px;
+  width: 150px;
   height: 30px;
   padding: 7px;
   background-color: #fff;

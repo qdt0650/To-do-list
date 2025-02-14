@@ -9,5 +9,7 @@
    @include setMargin(30px, auto, 50px, auto);
 }
 .container {
+   width: 100%;
    @include setMargin(30px, 0, 20px, 0);
+   @include setPadding(0, 15px, 0, 15px);
 }

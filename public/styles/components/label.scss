@@ -4,7 +4,7 @@
 @use '../helpers/utilities' as *;
 
 input[type='text'] {
-   @include setInput(170px, 30px, 7px, #fff, #999, 5px);
+   @include setInput(150px, 30px, 7px, #fff, #999, 5px);
 }
 
 .input_color {
