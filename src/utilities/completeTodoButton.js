@@ -19,30 +19,23 @@ export const completeTodoButton = (saveToDos) => {
       const dataChangeCom = getTodo.map((data) => {
          // 로컬스토리지 id값과 클릭한 요소의 id값을 비교해줍니다.
          if (data.id === Number(todoContentId)) {
-            const confirmCheck = () => {
-               if (data.completeButton) {
-                  alert('이미 완료된 할 일 입니다.')
-                  return true
-               } else {
-                  // 미완료처리된 할 일만 confirm으로 완료여부를 확인해줍니다.
-                  if (confirm('완료 처리 하시겠습니까?')) {
-                     // 완료 처리 성공시 클래스 추가와 true값을 리턴해줍니다.
-                     childrenTodoText.className += 'complete'
-                     editMark.className += 'complete'
-                     childrenTodoDate.className += 'complete'
-                     editContent.classList.remove('active')
-                     return true
-                  }
-               }
+            // 이미 완료된 할 일인지 확인
+            if (data.completeButton) {
+               alert('이미 완료된 할 일 입니다.')
+               return data
             }
-
-            // 로컬스토리지 데이터값을 복사해서 completeButton에 confirm 처리한 함수를 넣어줍니다.
-            return {
-               ...data,
-               completeButton: confirmCheck(),
+            const isConfirm = confirm('완료 처리 하시겠습니까?')
+            if (isConfirm) {
+               // 완료 처리 성공시 클래스 추가와 true값을 리턴해줍니다.
+               grandParent.classList.add('multiple_todo_complete')
+               if (editContent) {
+                  editContent.classList.remove('active')
+               }
+               return { ...data, completeButton: true }
             }
          }
          // 다른 모든 로컬스토리지 데이터를 반환해줍니다.
+         console.log(data)
          return data
       })
       // 바뀐 데이터를 로컬스토리지에 저장해줍니다.

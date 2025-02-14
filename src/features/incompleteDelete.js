@@ -14,7 +14,7 @@ export const incompleteDelete = (saveToDos, todos) => {
          todos = todos.filter((itemt) => itemt.id !== Number(todoContentId))
 
          // 클릭한 요소를 지워준다.
-         todoContent.remove()
+         grandParent.remove()
 
          // 수정모드일 때 수정content에 active클래스를 제거하여 같이 없애준다
          editContent.classList.remove('active')
@@ -29,17 +29,13 @@ export const incompleteDelete = (saveToDos, todos) => {
    pickDeleteButton.addEventListener('click', () => {
       const checkboxes = document.querySelectorAll('.todo_checkboxes')
       checkboxes.forEach((x) => {
-         const parentElement = x.closest('div')
          const grandParent = x.closest('.multiple_todo')
          const checkEditContent = grandParent.querySelector('.edit_content')
 
          if (x.checked) {
-            parentElement.remove()
+            grandParent.remove()
             checkEditContent.classList.remove('active')
          }
-         // if (x.checked) {
-         //    return checkEditContent.classList.remove('active')
-         // }
       })
 
       const checkDeleteFilter = todos.filter((x) => x.todoCheck !== true)

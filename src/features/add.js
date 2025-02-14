@@ -27,8 +27,8 @@ const handleInputValue = (event) => {
 
    // input에 입력한 길이를 가져와 조건에 맞지 않으면 alert창을 띄어줍니다.
    const todoTextLength = todoText.length
-   if (todoTextLength <= 1 || todoTextLength >= 20) {
-      alert('1자 이상 20자 이하로 입력해주세요')
+   if (todoTextLength <= 1 || todoTextLength >= 30) {
+      alert('1자 이상 30자 이하로 입력해주세요')
       return
    }
 
